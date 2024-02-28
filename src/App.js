@@ -49,11 +49,16 @@ export default function App() {
 }
 `;
 
+const handleCopy = () => {
+  setCopied(true);
+  setTimeout(() => setCopied(false), 1500); 
+};
+
   return (
     <div className="container">
       <div className="header">
         <h2>Title</h2>
-        <CopyToClipboard text={textToCopy} onCopy={() => setCopied(true)}>
+        <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
           <button className={`copy-button ${copied ? 'copied' : ''}`}>
             {copied ? (
               <>

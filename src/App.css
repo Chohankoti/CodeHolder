@@ -15,28 +15,42 @@
 }
 
 .copy-button {
-  background-color: transparent; 
-  border: none; 
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   color: black;
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .copy-button:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
+  background-color: rgba(0, 0, 0, 0.1);
 }
-
 
 .code-container {
   background-color: black;
   padding: 20px;
   border-radius: 0 0 5px 5px;
-  color: white;
+  color:lightgray;
 }
 
 .code-holder {
   margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 5px 10px; 
+  }
+  
+  .copy-button {
+    font-size: 14px; 
+  }
+  
+  .code-container {
+    padding: 10px; 
+  }
 }
