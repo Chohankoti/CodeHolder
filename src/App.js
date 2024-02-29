@@ -51,11 +51,11 @@ export default function App() {
 
 const handleCopy = () => {
   setCopied(true);
-  setTimeout(() => setCopied(false), 1500); 
+  setTimeout(() => setCopied(false), 1000); 
 };
 
   return (
-    <div className="container">
+    <div className="container">       
       <div className="header">
         <h2>Title</h2>
         <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
@@ -79,6 +79,6 @@ const handleCopy = () => {
           </code>
         </pre>
       </div>
-    </div>
+    </div>    
   );
 }
