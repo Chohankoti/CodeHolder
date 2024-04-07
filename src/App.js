@@ -3,6 +3,8 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboard, faCheck } from '@fortawesome/free-solid-svg-icons';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Import the desired theme
 
 export default function App() {
   const [copied, setCopied] = useState(false);
@@ -16,7 +18,7 @@ export default function App() {
 
   const handleCopy = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500); // Reset copied state after a delay
+    setTimeout(() => setCopied(false), 1500); 
   };
 
   return (
@@ -38,21 +40,19 @@ export default function App() {
         </CopyToClipboard>
       </div>
       <div className="code-container">
-        <pre className="code-holder">
-          <code>
-            {textToCopy}
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={prism}>
+          {textToCopy}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
 }
 `;
 
-const handleCopy = () => {
-  setCopied(true);
-  setTimeout(() => setCopied(false), 1000); 
-};
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000); 
+  };
 
   return (
     <div className="container">       
@@ -73,11 +73,9 @@ const handleCopy = () => {
         </CopyToClipboard>
       </div>
       <div className="code-container">
-        <pre className="code-holder">
-          <code>
-            {textToCopy}
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={prism}>
+          {textToCopy}
+        </SyntaxHighlighter>
       </div>
     </div>    
   );
